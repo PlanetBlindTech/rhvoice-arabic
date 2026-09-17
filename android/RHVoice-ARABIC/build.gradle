@@ -1,0 +1,160 @@
+apply plugin: 'com.android.application'
+
+ext.major_version = 1
+ext.minor_version = 18
+ext.revision_number = 4
+ext.baseVersionCode = 100000 * major_version + 1000 * minor_version + 10 * revision_number
+
+ext.base_pkg_dir_url = 'https://rhvoice.org/download/packages-%s.json'
+
+android {
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    compileSdk myCompileSdkVersion
+    buildToolsVersion myBuildToolsVersion
+    ndkVersion myNdkVersion
+    namespace "org.pbt.rh.ar"
+
+    buildFeatures {
+        prefab true
+        buildConfig true
+    }
+
+    defaultConfig {
+        multiDexEnabled true
+        minSdk myMinSdkVersion
+        targetSdk myTargetSdkVersion
+        applicationId "org.pbt.rh.ar"
+        versionName "${major_version}.${minor_version}.${revision_number}"
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    if (rootProject.signRelease) {
+        signingConfigs {
+            release {
+                storeFile file(rootProject.property("RHVoice.keyStore"))
+                storePassword rootProject.property("RHVoice.keyStorePassword")
+                keyAlias rootProject.property("RHVoice.keyAlias")
+                keyPassword rootProject.property("RHVoice.keyPassword")
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            if (rootProject.signRelease) {
+                signingConfig signingConfigs.release
+            }
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+        jniLibs {
+            pickFirsts += '**/libonnxruntime.so'
+            pickFirsts += '**/libonnxruntime4j_jni.so'
+            pickFirsts += '**/libc++_shared.so'
+        }
+    }
+
+    flavorDimensions 'dir'
+
+    productFlavors {
+        stable {
+            dimension 'dir'
+            versionCode = baseVersionCode
+        }
+
+        alpha {
+            dimension 'dir'
+            versionCode = baseVersionCode + 5
+            versionNameSuffix '-alpha'
+            ext.pkgDirUrl = sprintf(base_pkg_dir_url, "latest")
+        }
+
+        dev {
+            dimension 'dir'
+            versionCode = baseVersionCode + 9
+            versionNameSuffix '-dev'
+            ext.pkgDirUrl = findProperty('RHVoice.devPkgDirUrl') ?: sprintf(base_pkg_dir_url, "dev")
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.work:work-runtime:2.8.1'
+
+    implementation 'com.google.guava:guava:31.1-android'
+    implementation 'com.squareup.moshi:moshi:1.14.0'
+    implementation 'io.github.vvb2060.ndk:curl:8.1.1'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.google.android.material:material:1.12.0'
+    
+    // ExoPlayer for audio playback
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.7'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.7'
+    
+    // ONNX Runtime for Arabic diacritization model inference
+    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.20.0'
+}
+
+afterEvaluate {
+    def header = file("src/main/jni/generated/pkg_config.h")
+    android.applicationVariants.each { variant ->
+        def flavor = variant.productFlavors[0]
+        if (!flavor.ext.has('pkgDirUrl')) return
+        def url = flavor.ext.pkgDirUrl
+        def genTask = tasks.register("generatePkgConfig${variant.name.capitalize()}") {
+            outputs.file(header)
+            doLast {
+                header.parentFile.mkdirs()
+                header.text = "#pragma once\n#define PKG_DIR_URL \"${url}\"\n"
+            }
+        }
+        tasks.named("pre${variant.name.capitalize()}Build") { dependsOn genTask }
+    }
+}
+
+tasks.configureEach { task ->
+    if (task.name == 'assembleStableRelease' || task.name == 'assembleRelease') {
+        task.doLast {
+            def releaseFolder = file("C:/arabic-src/RHVOICE ARABIC/releases/app")
+            releaseFolder.mkdirs()
+            def srcApk = file("${buildDir}/outputs/apk/stable/release/RHVoice-ARABIC-stable-release.apk")
+            if (srcApk.exists()) {
+                copy {
+                    from srcApk
+                    into releaseFolder
+                    rename { "rhvoice-Arabic_1.0.0-release.apk" }
+                }
+                println "Copied release APK to ${releaseFolder}/rhvoice-Arabic_1.0.0-release.apk"
+            }
+        }
+    }
+}

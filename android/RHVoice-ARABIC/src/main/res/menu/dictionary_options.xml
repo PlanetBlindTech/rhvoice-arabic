@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/dict_search_hint"
+        android:contentDescription="@string/dict_search_hint"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_export"
+        android:title="@string/dict_export"
+        android:contentDescription="@string/dict_export"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_import"
+        android:title="@string/dict_import"
+        android:contentDescription="@string/dict_import"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_delete_all"
+        android:title="@string/dict_delete_all"
+        android:contentDescription="@string/dict_delete_all"
+        app:showAsAction="never" />
+
+</menu>

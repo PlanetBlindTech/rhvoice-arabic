@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Arabic Phoneme Set for RHVoice                                      -->
+<!-- Derived from Mantoq/Buckwalter phoneme inventory                    -->
+<!-- Each phoneme has acoustic features used by HTS labelling:           -->
+<!--   vc     = vowel/consonant (+/-)                                    -->
+<!--   vlng   = vowel length (0=n/a, s=short, l=long)                   -->
+<!--   ctype  = consonant type (0=n/a, s=stop, f=fricative,             -->
+<!--            a=affricate/approx, n=nasal, l=lateral, r=trill/tap)     -->
+<!--   cplace = consonant place (0=n/a, l=labial, b=labiodental,        -->
+<!--            d=dental/alveolar, p=palatal/postalveolar, v=velar,      -->
+<!--            u=uvular, h=pharyngeal, g=glottal, a=alveolar)           -->
+<!--   cvox   = consonant voicing (+/-)                                  -->
+
+<phonemes>
+  <!-- ================================================================ -->
+  <!-- Silence / Pause                                                  -->
+  <!-- ================================================================ -->
+  <phoneme name="pau"  vc="-" vlng="0" ctype="0" cplace="0" cvox="-" emphatic="-"/>
+  <phoneme name="ssil" vc="-" vlng="0" ctype="0" cplace="0" cvox="-" emphatic="-"/>
+  <phoneme name="stress" vc="-" vlng="0" ctype="0" cplace="0" cvox="-" emphatic="-"/>
+
+  <!-- ================================================================ -->
+  <!-- Vowels                                                           -->
+  <!-- ================================================================ -->
+  <!-- Short vowels -->
+  <phoneme name="a"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="u"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="i"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+
+  <!-- Long vowels -->
+  <phoneme name="aa" vc="+" vlng="l" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="uu" vc="+" vlng="l" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="ii" vc="+" vlng="l" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+
+  <!-- ================================================================ -->
+  <!-- Consonants — Stops (plosives)                                    -->
+  <!-- ================================================================ -->
+  <!-- Plain stops -->
+  <phoneme name="b"  vc="-" vlng="0" ctype="s" cplace="l" cvox="+" emphatic="-"/>  <!-- ba:' — bilabial voiced -->
+  <phoneme name="t"  vc="-" vlng="0" ctype="s" cplace="d" cvox="-" emphatic="-"/>  <!-- ta:' — dental voiceless -->
+  <phoneme name="d"  vc="-" vlng="0" ctype="s" cplace="d" cvox="+" emphatic="-"/>  <!-- da:l — dental voiced -->
+  <phoneme name="k"  vc="-" vlng="0" ctype="s" cplace="v" cvox="-" emphatic="-"/>  <!-- ka:f — velar voiceless -->
+  <phoneme name="q"  vc="-" vlng="0" ctype="s" cplace="u" cvox="-" emphatic="-"/>  <!-- qa:f — uvular voiceless -->
+
+  <!-- Glottal stop (hamza) -->
+  <phoneme name="&lt;" vc="-" vlng="0" ctype="s" cplace="g" cvox="-" emphatic="-"/> <!-- hamza — glottal stop -->
+
+  <!-- Emphatic (pharyngealized) stops -->
+  <phoneme name="T"  vc="-" vlng="0" ctype="s" cplace="d" cvox="-" emphatic="+"/>  <!-- Ta:' — emphatic /t/ -->
+  <phoneme name="D"  vc="-" vlng="0" ctype="s" cplace="d" cvox="+" emphatic="+"/>  <!-- Da:d — emphatic /d/ -->
+
+  <!-- ================================================================ -->
+  <!-- Consonants — Fricatives                                          -->
+  <!-- ================================================================ -->
+  <!-- Labiodental -->
+  <phoneme name="f"  vc="-" vlng="0" ctype="f" cplace="b" cvox="-" emphatic="-"/>  <!-- fa:' — labiodental voiceless -->
+
+  <!-- Dental/Alveolar -->
+  <phoneme name="^"  vc="-" vlng="0" ctype="f" cplace="d" cvox="-" emphatic="-"/>  <!-- tha:' — interdental voiceless -->
+  <phoneme name="*"  vc="-" vlng="0" ctype="f" cplace="d" cvox="+" emphatic="-"/>  <!-- dha:l — interdental voiced -->
+  <phoneme name="s"  vc="-" vlng="0" ctype="f" cplace="a" cvox="-" emphatic="-"/>  <!-- si:n — alveolar voiceless -->
+  <phoneme name="z"  vc="-" vlng="0" ctype="f" cplace="a" cvox="+" emphatic="-"/>  <!-- za:y — alveolar voiced -->
+
+  <!-- Postalveolar -->
+  <phoneme name="$"  vc="-" vlng="0" ctype="f" cplace="p" cvox="-" emphatic="-"/>  <!-- shi:n — postalveolar voiceless -->
+
+  <!-- Velar -->
+  <phoneme name="x"  vc="-" vlng="0" ctype="f" cplace="v" cvox="-" emphatic="-"/>  <!-- kha:' — velar voiceless -->
+  <phoneme name="g"  vc="-" vlng="0" ctype="f" cplace="v" cvox="+" emphatic="-"/>  <!-- ghayn — velar voiced -->
+
+  <!-- Pharyngeal -->
+  <phoneme name="H"  vc="-" vlng="0" ctype="f" cplace="h" cvox="-" emphatic="-"/>  <!-- Ha:' — pharyngeal voiceless -->
+  <phoneme name="E"  vc="-" vlng="0" ctype="f" cplace="h" cvox="+" emphatic="-"/>  <!-- 'ayn — pharyngeal voiced -->
+
+  <!-- Glottal -->
+  <phoneme name="h"  vc="-" vlng="0" ctype="f" cplace="g" cvox="-" emphatic="-"/>  <!-- ha:' — glottal voiceless -->
+
+  <!-- Emphatic (pharyngealized) fricatives -->
+  <phoneme name="S"  vc="-" vlng="0" ctype="f" cplace="a" cvox="-" emphatic="+"/>  <!-- Sa:d — emphatic /s/ -->
+  <phoneme name="Z"  vc="-" vlng="0" ctype="f" cplace="a" cvox="+" emphatic="+"/>  <!-- Zha:' — emphatic /z/ -->
+
+  <!-- ================================================================ -->
+  <!-- Consonants — Nasals                                              -->
+  <!-- ================================================================ -->
+  <phoneme name="m"  vc="-" vlng="0" ctype="n" cplace="l" cvox="+" emphatic="-"/>  <!-- mi:m — bilabial nasal -->
+  <phoneme name="n"  vc="-" vlng="0" ctype="n" cplace="d" cvox="+" emphatic="-"/>  <!-- nu:n — alveolar nasal -->
+
+  <!-- ================================================================ -->
+  <!-- Consonants — Liquids                                             -->
+  <!-- ================================================================ -->
+  <phoneme name="l"  vc="-" vlng="0" ctype="l" cplace="d" cvox="+" emphatic="-"/>  <!-- la:m — alveolar lateral -->
+  <phoneme name="r"  vc="-" vlng="0" ctype="r" cplace="d" cvox="+" emphatic="-"/>  <!-- ra:' — alveolar trill/tap -->
+
+  <!-- ================================================================ -->
+  <!-- Consonants — Glides / Semivowels                                 -->
+  <!-- ================================================================ -->
+  <phoneme name="w"  vc="-" vlng="0" ctype="a" cplace="l" cvox="+" emphatic="-"/>  <!-- wa:w — labial-velar approx -->
+  <phoneme name="y"  vc="-" vlng="0" ctype="a" cplace="p" cvox="+" emphatic="-"/>  <!-- ya:' — palatal approximant -->
+
+  <!-- ================================================================ -->
+  <!-- Consonants — Affricates                                          -->
+  <!-- ================================================================ -->
+  <phoneme name="j"  vc="-" vlng="0" ctype="a" cplace="p" cvox="+" emphatic="-"/>  <!-- ji:m — postalveolar affricate -->
+
+  <!-- ================================================================ -->
+  <!-- Loan phoneme                                                     -->
+  <!-- ================================================================ -->
+  <phoneme name="v"  vc="-" vlng="0" ctype="f" cplace="b" cvox="+" emphatic="-"/>  <!-- /v/ for loanwords -->
+
+  <!-- ================================================================ -->
+  <!-- Latin / Fallback phonemes to prevent unknown phoneme exceptions -->
+  <!-- ================================================================ -->
+  <phoneme name="M"  vc="-" vlng="0" ctype="n" cplace="l" cvox="+" emphatic="-"/>
+  <phoneme name="N"  vc="-" vlng="0" ctype="n" cplace="d" cvox="+" emphatic="-"/>
+  <phoneme name="A"  vc="+" vlng="l" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="B"  vc="-" vlng="0" ctype="s" cplace="l" cvox="+" emphatic="-"/>
+  <phoneme name="C"  vc="-" vlng="0" ctype="s" cplace="v" cvox="-" emphatic="-"/>
+  <phoneme name="F"  vc="-" vlng="0" ctype="f" cplace="b" cvox="-" emphatic="-"/>
+  <phoneme name="G"  vc="-" vlng="0" ctype="f" cplace="v" cvox="+" emphatic="-"/>
+  <phoneme name="I"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="J"  vc="-" vlng="0" ctype="a" cplace="p" cvox="+" emphatic="-"/>
+  <phoneme name="K"  vc="-" vlng="0" ctype="s" cplace="v" cvox="-" emphatic="-"/>
+  <phoneme name="L"  vc="-" vlng="0" ctype="l" cplace="d" cvox="+" emphatic="-"/>
+  <phoneme name="O"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="P"  vc="-" vlng="0" ctype="s" cplace="l" cvox="+" emphatic="-"/>
+  <phoneme name="Q"  vc="-" vlng="0" ctype="s" cplace="u" cvox="-" emphatic="-"/>
+  <phoneme name="R"  vc="-" vlng="0" ctype="r" cplace="d" cvox="+" emphatic="-"/>
+  <phoneme name="U"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="V"  vc="-" vlng="0" ctype="f" cplace="b" cvox="+" emphatic="-"/>
+  <phoneme name="W"  vc="-" vlng="0" ctype="a" cplace="l" cvox="+" emphatic="-"/>
+  <phoneme name="X"  vc="-" vlng="0" ctype="f" cplace="v" cvox="-" emphatic="-"/>
+  <phoneme name="Y"  vc="-" vlng="0" ctype="a" cplace="p" cvox="+" emphatic="-"/>
+  <phoneme name="c"  vc="-" vlng="0" ctype="s" cplace="v" cvox="-" emphatic="-"/>
+  <phoneme name="e"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="o"  vc="+" vlng="s" ctype="0" cplace="0" cvox="+" emphatic="-"/>
+  <phoneme name="p"  vc="-" vlng="0" ctype="s" cplace="l" cvox="+" emphatic="-"/>
+</phonemes>

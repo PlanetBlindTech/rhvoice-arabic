@@ -1,0 +1,38 @@
+{
+"languages": [
+{
+"lang2code": "ar",
+"lang3code": "ara",
+"testMessage": "إذا كنت تسمع هذا الصوت، فإن المحرك يعمل بشكل صحيح.",
+"name": "Arabic",
+"version": {
+"major": 1,
+"minor": 1
+},
+"dataUrl": "https://rhvoice.org/download/RHVoice-language-Arabic-v1.1.zip",
+"dataMd5": "",
+"id": "arabic",
+"voices": [
+{
+"name": "Zayd",
+"ctry2code": "EG",
+"ctry3code": "EGY",
+"demoUrl": "",
+"version": {
+"major": 4,
+"minor": 0
+},
+"dataUrl": "https://rhvoice.org/download/RHVoice-voice-Arabic-Zayd-v4.0.zip",
+"dataMd5": "",
+"id": "zayd"
+}
+]
+}
+],
+"defaultVoices": {
+"ar": {
+"*": "zayd"
+}
+},
+"ttl": 86400
+}

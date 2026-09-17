@@ -1,0 +1,47 @@
+# Sensitive Keys, Credentials & Signing Keys
+*.keystore
+*.jks
+*.p12
+*.pem
+*.pk8
+release.keystore
+local.properties
+.env
+*token*
+gradle.properties
+
+# Gradle & Android Build Artifacts
+.gradle/
+build/
+**/build/
+android/.gradle/
+android/build/
+android/*/build/
+.cxx/
+**/.cxx/
+android/*/.cxx/
+*.apk
+*.aar
+
+# NVDA Add-on Build Outputs
+*.nvda-addon
+
+# Python & Cache Files
+__pycache__/
+/**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Temporary Files & Logs
+*.tmp
+*.log
+*.bak
+*.swp
+
+# OS & IDE Files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db

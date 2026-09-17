@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RHVOICE ARABIC</string>
+    <string name="set_as_default">الانتقال لإعدادات تحويل النص إلى كلام</string>
+    <string name="enter_text_hint">اكتب النص هنا...</string>
+    <string name="listen">استماع</string>
+    <string name="stop">إيقاف التشغيل</string>
+
+    <string name="settings">الإعدادات</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="action_dictionary">القاموس</string>
+    <string name="action_about">حول التطبيق</string>
+    <string name="about_app">حول التطبيق</string>
+
+    <string name="prosody_settings">إعدادات النطق</string>
+    <string name="speed_label">السرعة</string>
+    <string name="pitch_label">الحدة</string>
+    <string name="volume_label">مستوى الصوت</string>
+    <string name="read_emojis_title">نطق الرموز التعبيرية</string>
+    <string name="read_emojis_summary">قراءة الإيموجي والرموز التعبيرية والعملات باللغة العربية</string>
+    <string name="pause_sukoon_title">تسكين أواخر الكلمات</string>
+    <string name="pause_sukoon_summary">تسكين الحرف الأخير في الجملة وحذف التاء المربوطة مع إبقاء حركة ما قبلها</string>
+
+    <string name="dictionary">القاموس</string>
+    <string name="dict_search_hint">بحث…</string>
+    <string name="dict_add">إضافة</string>
+    <string name="dict_edit">تعديل</string>
+    <string name="dict_delete">حذف</string>
+    <string name="dict_cancel">إلغاء</string>
+    <string name="dict_save">حفظ</string>
+    <string name="dict_original">المصطلح الخاطئ</string>
+    <string name="dict_replacement">التصحيح</string>
+    <string name="dict_empty">لا توجد مصطلحات في القاموس بعد</string>
+    <string name="dict_export">تصدير القاموس</string>
+    <string name="dict_import">استيراد قاموس</string>
+    <string name="dict_delete_all">حذف الكل</string>
+    <string name="dict_delete_all_confirm">هل أنت متأكد من حذف محتوى القاموس بالكامل؟</string>
+    <string name="dict_import_success">تم استيراد القاموس بنجاح</string>
+    <string name="dict_import_fail">بيانات غير معروفة. فشل استيراد القاموس</string>
+    <string name="dict_export_empty">القاموس فارغ، لا يوجد شيء لتصديره</string>
+    <string name="dict_cleared">تم حذف جميع المصطلحات</string>
+
+    <string name="developed_by">مشروع لدعم الأصوات العربية من RHVOICE, مطوَّرٌ بواسطة كوكب المكفوفين التقني.</string>
+    <string name="footer_developed_by">طُوِّرَ بواسطة كوكب المكفوفين التقني</string>
+    <string name="btn_youtube">تابعنا على YouTube</string>
+    <string name="btn_youtube_desc">تابعنا على YouTube</string>
+    <string name="btn_telegram">تابعنا على Telegram</string>
+    <string name="btn_telegram_desc">تابعنا على Telegram</string>
+    <string name="btn_email">اتصل بنا</string>
+    <string name="btn_email_desc">اتصل بنا</string>
+
+    <string name="ok">موافق</string>
+    <string name="cancel">إلغاء</string>
+    <string name="play">تشغيل</string>
+    <string name="install">تثبيت</string>
+    <string name="uninstall">إلغاء التثبيت</string>
+    <string name="increase">زيادة</string>
+    <string name="decrease">تقليل</string>
+    <string name="reset">إعادة ضبط</string>
+    <string name="add">إضافة</string>
+    <string name="remove">إزالة</string>
+    <string name="languages">الأصوات العربية</string>
+    <string name="user_dicts">قواميس المستخدم</string>
+    <string name="default_voice_title">الصوت الافتراضي</string>
+    <string name="default_voice_dialog_title">اختر صوتاً</string>
+    <string name="detect_language_title">اكتشاف اللغة</string>
+    <string name="detect_language_desc">التبديل التلقائي للغة</string>
+    <string name="pseudo_english_title">الكلمات الإنجليزية</string>
+    <string name="pseudo_english_desc">محاولة قراءة الكلمات الإنجليزية بشكل صحيح</string>
+    <string name="voice_remove_question">هل أنت متأكد من إلغاء التثبيت؟</string>
+</resources>

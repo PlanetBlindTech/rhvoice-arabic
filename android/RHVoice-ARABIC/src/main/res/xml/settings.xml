@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="root">
+    <SwitchPreferenceCompat
+        android:title="@string/read_emojis_title"
+        android:summary="@string/read_emojis_summary"
+        android:key="read_emojis"
+        android:defaultValue="true"
+        android:order="10"/>
+</PreferenceScreen>
